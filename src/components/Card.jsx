@@ -27,7 +27,7 @@ export default function Card(props) {
                 <p>Nombre {name} -
                     Razón social {companyName} -
                     NIT {nit} -
-                    Teléfono {phone} -
+                    
                     Código {code}</p>
                 <div>
                     <EditPopup key={id}
