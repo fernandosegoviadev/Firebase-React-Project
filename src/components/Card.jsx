@@ -24,10 +24,10 @@ export default function Card(props) {
     return (
         <div className='main-card-box'>
             <div className='card-box'>
-                <p>Nombre {name} <br />
-                    Razón social {companyName} <br />
-                    NIT {nit} <br />
-                    Teléfono {phone} <br /> 
+                <p>Nombre {name} -
+                    Razón social {companyName} -
+                    NIT {nit} -
+                    Teléfono {phone} -
                     Código {code}</p>
                 <div>
                     <EditPopup key={id}
