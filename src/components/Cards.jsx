@@ -4,11 +4,9 @@ import { useState, useEffect } from 'react';
 
 
 export default function Cards(props) {
-    // console.log(props.companies, "las props en Cards");
     const [progress, setProgress] = useState(0);
     
     const scrollHandler = (event) => {
-        // console.log('se dispara', event)
         const containerHeight = event.currentTarget.clientHeight;
         const scrollHeight = event.currentTarget.scrollHeight;
         const scrollTop = event.currentTarget.scrollTop;
@@ -23,10 +21,10 @@ export default function Cards(props) {
     },[progress])
 
     return (
-        <div>
-            <p>La lista de Cards - progreso {progress} %</p>
+        <div>       
             <div onScroll={scrollHandler}
-                style={{ overflowY: "scroll", maxHeight: "400px", minWidth: "440px" }}>
+                style={{ overflowY: "scroll", maxHeight: "600px", minHeight: "550px",
+                 minWidth: "500px" }}>
                 {props.companies.length ? props.companies.map(e =>
                     <Card
                         key={e.id}
@@ -40,7 +38,6 @@ export default function Cards(props) {
                     />
                 ) : null}
             </div>
-
         </div>
     )
 }

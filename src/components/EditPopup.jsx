@@ -5,7 +5,6 @@ import { updateDataBase } from './../application/api';
 
 
 export default function EditPopup(props) {
-    // console.log(props, "las props en Edit Popup");
 
     let { name, companyName, nit, phone, code, id } = props;
 

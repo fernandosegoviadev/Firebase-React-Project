@@ -3,16 +3,14 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { addDataBase } from './../application/api';
 
-export default function AddPopup(props) {
-    // console.log('las prop de AddPopup', props)
+export default function AddPopup(props) { 
     const initialState = {
         name: "", companyName: "", nit: "",
         phone: "", code: ""
     };
     const [data, setData] = useState(initialState);
 
-    useEffect(() => {
-        // console.log(props, ' las props en addPopup')
+    useEffect(() => { 
         setData({ ...initialState, [props.type]: props.value }); 
     }, [props])
 

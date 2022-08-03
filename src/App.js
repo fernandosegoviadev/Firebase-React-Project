@@ -22,9 +22,9 @@ function App() {
     }
   }
 
-
+  // https://console.firebase.google.com/u/1/project/fir-challenge-a3e50/firestore/data/~2Fcompanies~2FPADhrixbkG8OnoUTD9F2
   // https://firebase.google.com/docs/firestore/query-data/get-data?hl=es-419
-  // https://console.firebase.google.com/u/1/project/my-first-project-9cde2/firestore/data/~2Fusers~2Fs570dXEBHQxJCeb63xgF
+
 
   return (
     <div className="App" >

@@ -3,7 +3,6 @@ import EditPopup from './EditPopup';
 import { deleteDataBase } from '../application/api';
 
 export default function Card(props) {
-    // console.log(props, "las props en cada card");
 
     let { name, companyName, nit, phone, code, id } = props;
 
@@ -27,7 +26,9 @@ export default function Card(props) {
             <div className='card-box'>
                 <p>Nombre {name} <br />
                     Razón social {companyName} <br />
-                    NIT {nit}</p>
+                    NIT {nit} <br />
+                    Teléfono {phone} <br /> 
+                    Código {code}</p>
                 <div>
                     <EditPopup key={id}
                         id={id}

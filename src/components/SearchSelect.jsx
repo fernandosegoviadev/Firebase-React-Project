@@ -1,13 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { searchDataBase } from '../application/api';
-// import Select from 'react-select';
 import AddPopup from './AddPopup';
 import Cards from './Cards';
 import { paginated } from '../application/paginated';
 import CreatableSelect from 'react-select/creatable';
 
 export default function SearchSelect(props) {
-    // console.log(props.companies, "las props");
     const initialState = [{ value: 'agregar', label: 'Agregar' }];
 
     const [companies, setCompanies] = useState([]);
@@ -16,17 +14,15 @@ export default function SearchSelect(props) {
     const [options, setOptions] = useState(initialState);
     const [query, setQuery] = useState({});
 
-    const [companiesPerPage, setCompaniesPerPage] = useState([]); // Paginado
-    const [actualPage, setActualPage] = useState(1); // Paginado
-    const cardsPerPage = 3; // Paginado
-
     // ------------ Paginado ----------------------------------------
+    const [companiesPerPage, setCompaniesPerPage] = useState([]);
+    const [actualPage, setActualPage] = useState(1);
+    const cardsPerPage = 3;
+
     const nextPage = () => {
         console.log('nextPage recibe el llamado');
-        if (companies.length && actualPage) {
-            // console.log('Entra en el  primer if')          
-            let nextData = paginated(companies, cardsPerPage, actualPage);
-            // console.log(nextData, 'esto es next Data')
+        if (companies.length && actualPage) {           
+            let nextData = paginated(companies, cardsPerPage, actualPage);            
             if (nextData.cards) {
                 setCompaniesPerPage(companiesPerPage.concat(nextData.cards));
                 setActualPage(nextData.nextPage);
@@ -34,20 +30,17 @@ export default function SearchSelect(props) {
         }
     }
 
-    useEffect(() => {
-        // console.log('LENGTH se ejecuta el useEffect luego de la búsquda', actualPage)
+    useEffect(() => {        
         if (companies.length && actualPage) {
             nextPage();
         }
     }, [companies])
 
-    // paginated(allCards, cardsPerPage, actualPage)
     // --------------------------------------------------------------
 
 
 
     useEffect(() => {
-        // console.log('entra el useEffect por cambio en las props.companies')
         setCompanies(props.companies);
         if (options.length === 0 && typeSearch && props.companies.length) {
             let optionsByFilter = props.companies.map((u) => u.data()[typeSearch])
@@ -61,8 +54,8 @@ export default function SearchSelect(props) {
             if (actualPage === 1) {
                 nextPage();
             }
-            setActualPage(1); // Paginado
-            setCompaniesPerPage([]); // Paginado
+            setActualPage(1);
+            setCompaniesPerPage([]);
         }
     }, [props.companies])
 
@@ -85,8 +78,7 @@ export default function SearchSelect(props) {
         }
     }
 
-    const createSearch = (e) => {
-        // console.log(e, 'el evento que llega')
+    const createSearch = (e) => {      
         if (e && e.value === "agregar") {
             openForm(valueSearch);
         }
@@ -102,8 +94,8 @@ export default function SearchSelect(props) {
         if (Object.entries(query).length === 1) {
             let resulSearch = await searchDataBase(query);
             setCompanies(resulSearch.docs);
-            setActualPage(1); // Paginado
-            setCompaniesPerPage([]); // Paginado
+            setActualPage(1);
+            setCompaniesPerPage([]);
 
             console.log(resulSearch.docs, 'luego de la búsqueda')
         }
