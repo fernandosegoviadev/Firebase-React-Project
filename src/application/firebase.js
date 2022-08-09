@@ -2,6 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+// const {REACT_APP_FIREBASE} = process.env;
+// console.log(process.env, REACT_APP_FIREBASE, 'las varibles de entorno')
 
 const firebaseConfig = {  
   apiKey: "AIzaSyDv4Idaet8iiQNoZcRZF2ReP0ptDZdiEHU",

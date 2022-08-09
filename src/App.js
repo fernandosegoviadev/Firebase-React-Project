@@ -1,6 +1,6 @@
 import './App.css';
 import { getDataBase } from './application/api';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import SearchSelect from './components/SearchSelect';
 
 
