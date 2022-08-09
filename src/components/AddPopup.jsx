@@ -2,11 +2,13 @@ import './style/popup.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { addDataBase } from './../application/api';
+import {Name, CompanyName, Cuit, Address, Email} from '../application/constants';
 
-export default function AddPopup(props) { 
+export default function AddPopup(props) {
+   
     const initialState = {
-        name: "", companyName: "", nit: "",
-        phone: "", code: ""
+        name: "", companyName: "", cuit: "",
+        address: "", email: ""
     };
     const [data, setData] = useState(initialState);
 
@@ -21,19 +23,19 @@ export default function AddPopup(props) {
 
     const addData = async (e) => {
         e.preventDefault();
-        if (data.name && data.companyName && data.nit) {
+        if (data.name && data.companyName && data.cuit) {
             await addDataBase(data);
             props.getData();
             window.alert("Registro creado");
             setData({
                 name: "",
                 companyName: "",
-                nit: "",
-                phone: "",
-                code: ""
+                cuit: "",
+                address: "",
+                email: ""
             });
         };
-        if (!data.name || !data.companyName || !data.nit) {
+        if (!data.name || !data.companyName || !data.cuit) {
             window.confirm("Campos obligatorios incompletos");
             e.preventDefault();
         }
@@ -44,9 +46,9 @@ export default function AddPopup(props) {
         setData({
             name: "",
             companyName: "",
-            nit: "",
-            phone: "",
-            code: ""
+            cuit: "",
+            address: "",
+            email: ""
         });
     }
 
@@ -56,30 +58,30 @@ export default function AddPopup(props) {
             <form action="/action_page.php" className="form-container">
                 <h1>Create</h1>
 
-                <label htmlFor="name" ><b>*Nombre</b></label>
+                <label htmlFor={Name} ><b>*Nombre</b></label>
                 <input id="myName" type="text" placeholder="Nombre fantasia"
-                    name="name" required value={data.name}
-                    onChange={(e) => onChangeData(e, "name")} />
+                    name={Name} required value={data.name}
+                    onChange={(e) => onChangeData(e, Name)} />
 
-                <label htmlFor="companyName"><b>*Razón social</b></label>
+                <label htmlFor={CompanyName}><b>*Razón social</b></label>
                 <input type="text" placeholder="Nombre Legal"
-                    name="companyName" required value={data.companyName}
-                    onChange={(e) => onChangeData(e, "companyName")} />
+                    name={CompanyName} required value={data.companyName}
+                    onChange={(e) => onChangeData(e, CompanyName)} />
 
-                <label htmlFor="nit"><b>*NIT</b></label>
-                <input type="text" placeholder="123456789-5"
-                    name="nit" required value={data.nit}
-                    onChange={(e) => onChangeData(e, "nit")} />
+                <label htmlFor={Cuit}><b>*CUIT</b></label>
+                <input type="text" placeholder="12-12345678-1"
+                    name={Cuit} required value={data.cuit}
+                    onChange={(e) => onChangeData(e, Cuit)} />
 
-                <label htmlFor="phone"><b>Teléfono</b></label>
-                <input type="text" placeholder="0123-112-123-123"
-                    name="phohe" required value={data.phone}
-                    onChange={(e) => onChangeData(e, "phone")} />
+                <label htmlFor={Address}><b>Dirección</b></label>
+                <input type="text" placeholder="Dirección 1234"
+                    name={Address} required value={data.address}
+                    onChange={(e) => onChangeData(e, Address)} />
 
-                <label htmlFor="code"><b>Código</b></label>
-                <input type="text" placeholder="1234"
-                    name="code" required value={data.code}
-                    onChange={(e) => onChangeData(e, "code")} />
+                <label htmlFor={Email}><b>Email</b></label>
+                <input type="text" placeholder="email@email.com"
+                    name={Email} required value={data.email}
+                    onChange={(e) => onChangeData(e, Email)} />
 
                 <button type="submit" className="btn" onClick={(e) => addData(e)}>Create</button>
                 <button type="button" className="btn cancel" onClick={closeForm}>Close</button>

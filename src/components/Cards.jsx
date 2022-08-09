@@ -31,9 +31,9 @@ export default function Cards(props) {
                         id={e.id}
                         name={e.data().name}
                         companyName={e.data().companyName}
-                        nit={e.data().nit}
-                        phone={e.data().phone}
-                        code={e.data().code}
+                        cuit={e.data().cuit}
+                        address={e.data().address}
+                        email={e.data().email}
                         getData={props.getData}
                     />
                 ) : null}

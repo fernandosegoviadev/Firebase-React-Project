@@ -4,7 +4,7 @@ import { deleteDataBase } from '../application/api';
 
 export default function Card(props) {
 
-    let { name, companyName, nit, phone, code, id } = props;
+    let { name, companyName, cuit, address, email, id } = props;
 
     function openEditForm(uid) {
         if (uid) {
@@ -26,17 +26,17 @@ export default function Card(props) {
             <div className='card-box'>
                 <p>Nombre {name} -
                     Razón social {companyName} -
-                    NIT {nit} -
-                    Teléfono {phone} -
-                    Código {code}</p>
+                    CUIT {cuit} -
+                    Dirección {address} -
+                    Email {email}</p>
                 <div>
                     <EditPopup key={id}
                         id={id}
                         name={name}
                         companyName={companyName}
-                        nit={nit}
-                        phone={phone}
-                        code={code}
+                        cuit={cuit}
+                        address={address}
+                        email={email}
                         getData={props.getData}
                     />
                 </div>

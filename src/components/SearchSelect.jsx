@@ -4,12 +4,13 @@ import AddPopup from './AddPopup';
 import Cards from './Cards';
 import { paginated } from '../application/paginated';
 import CreatableSelect from 'react-select/creatable';
+import { Name, CompanyName, Cuit, Address, Email } from '../application/constants';
 
 export default function SearchSelect(props) {
     const initialState = [{ value: 'agregar', label: 'Agregar' }];
 
     const [companies, setCompanies] = useState([]);
-    const [typeSearch, setTypeSearch] = useState("name");
+    const [typeSearch, setTypeSearch] = useState(Name);
     const [valueSearch, setValueSearch] = useState("");
     const [options, setOptions] = useState(initialState);
     const [query, setQuery] = useState({});
@@ -20,7 +21,7 @@ export default function SearchSelect(props) {
     const cardsPerPage = 20;
 
     const nextPage = () => {
-        console.log('nextPage recibe el llamado');
+        // console.log('nextPage recibe el llamado');
         if (companies.length && actualPage) {           
             let nextData = paginated(companies, cardsPerPage, actualPage);            
             if (nextData.cards) {
@@ -126,25 +127,25 @@ export default function SearchSelect(props) {
                         marginTop: '1em',
                     }}
                 >
-                    <input type="radio" id="Name" name="fav_language" value="name"
+                    <input type="radio" id={Name} name="fav_language" value={Name}
                         onClick={(e) => setTypeSearch(e.target.value)} />
-                    <label htmlFor="Name">Nombre</label>
+                    <label htmlFor={Name}>Nombre</label>
 
-                    <input type="radio" id="CompanyName" name="fav_language" value="companyName"
+                    <input type="radio" id={CompanyName} name="fav_language" value={CompanyName}
                         onClick={(e) => setTypeSearch(e.target.value)} />
-                    <label htmlFor="CompanyName">Razón social</label>
+                    <label htmlFor={CompanyName}>Razón social</label>
 
-                    <input type="radio" id="Nit" name="fav_language" value="nit"
+                    <input type="radio" id={Cuit} name="fav_language" value={Cuit}
                         onClick={(e) => setTypeSearch(e.target.value)} />
-                    <label htmlFor="Nit">NIT</label>
+                    <label htmlFor={Cuit}>CUIT</label>
 
-                    <input type="radio" id="Phone" name="fav_language" value="phone"
+                    <input type="radio" id={Address} name="fav_language" value={Address}
                         onClick={(e) => setTypeSearch(e.target.value)} />
-                    <label htmlFor="Phone">Teléfono</label>
+                    <label htmlFor={Address}>Dirección</label>
 
-                    <input type="radio" id="Code" name="fav_language" value="code"
+                    <input type="radio" id={Email} name="fav_language" value={Email}
                         onClick={(e) => setTypeSearch(e.target.value)} />
-                    <label htmlFor="Code">Código</label>
+                    <label htmlFor={Email}>Email</label>
 
                     <h3>Criterio de búsqueda: {typeSearch}</h3>
                 </div>
