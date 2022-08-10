@@ -18,7 +18,7 @@ export default function SearchSelect(props) {
     // ------------ Paginado ----------------------------------------
     const [companiesPerPage, setCompaniesPerPage] = useState([]);
     const [actualPage, setActualPage] = useState(1);
-    const cardsPerPage = 6;
+    const cardsPerPage = 9;
 
     const nextPage = () => {
         // console.log('nextPage recibe el llamado');
