@@ -1,8 +1,11 @@
-<<img src="./src/images/View-project.png">
+# Firebase React Proyect
+This project was created as part of challege to create a SPA that work with React JS and Firebase Data Base. In the screen you can see some options to find results, create, edit and delete records. Nevertheless, this SPA have other features, for exemple you can select a filter to improve your query and get best results. Aditionally, you can access two forms to create and edit information, and popups that alert you the action performed.\
+I invite you to test my SPA and its features. I hope that you enjoy it.\
+Best regards,\
+Fernando.
 
-# Getting Started with Create React App
+<img src="./src/images/View-project.png">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
