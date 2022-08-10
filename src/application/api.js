@@ -5,7 +5,7 @@ export async function addDataBase (data) {
     if (data) {
         try {
             const docRef = await addDoc(collection(db, "companies"), data);
-            console.log("Document 1 weitten with ID:", docRef.id);
+            // console.log("Document 1 weitten with ID:", docRef.id);
         } catch (e) {
             console.log("Error adding document:", e)
         }

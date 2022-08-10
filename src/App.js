@@ -31,10 +31,12 @@ function App() {
       <div className="App-header" >
         <h4>Proyecto React-Firebase</h4>
         <div>
-          <button onClick={getData}>Recargar</button>
+          <button onClick={getData}>
+            <span class="text">Recargar</span>
+          </button>
           {/* <p style={{fontSize:"medium"}}>Existen <b>{companies.length}</b> registros</p> */}
         </div>
-        <SearchSelect companies={companies} getData={getData} />      
+        <SearchSelect companies={companies} getData={getData} />
       </div>
     </div>
   );
