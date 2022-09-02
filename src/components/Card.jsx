@@ -13,11 +13,11 @@ export default function Card(props) {
     }
 
     const deleteData = async (uid) => {
-        if (window.confirm("Está seguro que quiere eliminar el registro?")) {
-            if (uid) {
-                await deleteDataBase(uid);
-                props.getData();
-            }
+        if (window.confirm("El desrrollador ha desactivado esta función")) {
+            // if (uid) {
+            //     await deleteDataBase(uid);
+            //     props.getData();
+            // }
         }
     }
 

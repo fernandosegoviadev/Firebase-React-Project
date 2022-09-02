@@ -32,7 +32,7 @@ function App() {
         <h4>Proyecto React-Firebase</h4>
         <div>
           <button onClick={getData}>
-            <span class="text">Recargar</span>
+            <span className="text">Recargar</span>
           </button>
           {/* <p style={{fontSize:"medium"}}>Existen <b>{companies.length}</b> registros</p> */}
         </div>
