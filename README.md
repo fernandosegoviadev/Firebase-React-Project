@@ -4,7 +4,7 @@ I invite you to test my SPA and its features. I hope that you enjoy it.\
 Best regards,\
 Fernando.
 
-Open deploy here [Firebase-React-Project](https://react-firebase-project-one.vercel.app/)
+Open deploy here [Firebase-React-Project](https://react-firebase-project.vercel.app/)
 
 <img src="./src/images/View-project.png">
 
